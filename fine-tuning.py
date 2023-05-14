@@ -99,20 +99,3 @@ model.train(train_df=train_df,
             batch_size=64,
             use_gpu=False,
             dataloader_num_workers=32)
-
-# model.load_model(r"outputs/simplet5-epoch-5-train-loss-1.3866-val-loss-1.7207", use_gpu=False)
-#
-# # generate
-# model.predict("summarize:  some text you want to test it on")
-#
-# sample_abstracts = test_df.sample(10)
-#
-# for i, abstract in sample_abstracts.iterrows():
-#     print(f"===== Abstract =====")
-#     print(abstract['source_text'])
-#     summary = model.predict(abstract['source_text'])[0]
-#     print(f"\n===== Actual Title =====")
-#     print(f"{abstract['target_text']}")
-#     print(f"\n===== Generated Title =====")
-#     print(f"{summary}")
-#     print("\n +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
