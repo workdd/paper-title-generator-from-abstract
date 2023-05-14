@@ -1,1 +1,2 @@
 simplet5
+awscli
