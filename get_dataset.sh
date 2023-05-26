@@ -1,0 +1,1 @@
+curl -O https://recommand-paper.s3.ap-northeast-2.amazonaws.com/arxiv-dataset.json
