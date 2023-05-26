@@ -1,3 +1,4 @@
 simplet5
-sklearn
+scikit-learn
 pandas
+tqdm
