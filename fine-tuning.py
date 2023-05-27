@@ -96,6 +96,6 @@ model.train(train_df=train_df,
             source_max_token_len=512,
             target_max_token_len=128,
             max_epochs=1,
-            batch_size=16,
+            batch_size=32,
             use_gpu=True,
             dataloader_num_workers=32)
