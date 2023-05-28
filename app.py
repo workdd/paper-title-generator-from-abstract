@@ -3,7 +3,8 @@ import json
 
 model = SimpleT5()
 model.from_pretrained("t5", "t5-base")
-model.load_model("t5", "models/T5-epoch8", use_gpu=False)
+
+model.load_model("t5", "/var/task/T5-epoch1", use_gpu=False)
 
 
 def handler(event, context):
