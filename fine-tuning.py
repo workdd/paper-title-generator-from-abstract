@@ -4,6 +4,9 @@ import pandas as pd
 from tqdm.auto import tqdm
 from sklearn.model_selection import train_test_split
 from simplet5 import SimpleT5
+import torch
+
+torch.cuda.empty_cache()
 
 data_file = r'arxiv-dataset.json'
 
@@ -74,7 +77,8 @@ def build_dataset(paper_categories):
     papers = pd.DataFrame({'title': titles, 'abstract': abstracts})
     papers = papers.dropna()
     papers["title"] = papers["title"].apply(lambda x: re.sub('\s+', ' ', x))
-    papers["abstract"] = papers["abstract"].apply(lambda x: re.sub('\s+', ' ', x))
+    papers["abstract"] = papers["abstract"].apply(
+        lambda x: re.sub('\s+', ' ', x))
 
     del titles, abstracts
     return papers
