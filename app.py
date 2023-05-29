@@ -4,7 +4,7 @@ from simplet5 import SimpleT5
 import json
 
 model = SimpleT5()
-model_name = os.environ('MODEL_NAME')
+model_name = os.environ['MODEL_NAME']
 model.load_model("t5", f"/var/task/{model_name}", use_gpu=False)
 
 
