@@ -15,7 +15,7 @@ model.load_model("t5", f"/var/task/{model_name}", use_gpu=False)
 
 def handler(event, context):
     print(event)
-    e = event['Body']
+    e = event['body']
     e = json.dumps(parse_qs(e))
     e = json.loads(e)
     print(e)
