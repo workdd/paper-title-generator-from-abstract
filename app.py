@@ -23,10 +23,13 @@ def handler(event, context):
     abstract = "summarize: " + abstract
 
     summary = model.predict(abstract)[0]
+    print(summary)
+    result = {'summary': summary}
     return {
         'statusCode': 200,
-        'summary': json.dumps(summary, default=str),
+        'body': json.dumps(result),
         'headers': {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            'Access-Control-Allow-Origin': '*'
         }
     }
