@@ -9,7 +9,9 @@ model.load_model("t5", f"/var/task/{model_name}", use_gpu=False)
 
 
 def handler(event, context):
-    abstract = event['abstract']
+    print(event)
+    e = event['Payload']['Key']
+    abstract = e['abstract']
     abstract = "summarize: " + abstract
     
     summary = model.predict(abstract)[0]
