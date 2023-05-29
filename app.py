@@ -3,10 +3,10 @@ import json
 import os
 
 model = SimpleT5()
-model.from_pretrained("t5", "t5-base")
+model.from_pretrained("t5", "t5-base", cache_dir='/tmp')
 
 model_name = os.environ('MODEL_NAME')
-model.load_model("t5", f"/var/task/{model_name}", use_gpu=False, cache_dir='/tmp')
+model.load_model("t5", f"/var/task/{model_name}", use_gpu=False)
 
 
 def handler(event, context):
