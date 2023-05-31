@@ -11,6 +11,7 @@ WORKDIR ${LAMBDA_TASK_ROOT}
 ARG MODEL_URL
 ARG MODEL_NAME
 RUN curl -O $MODEL_URL
-RUN unzip $MODEL_NAME
+RUN unzip $MODEL_NAME \
+    rm -rf $MODEL_NAME
 
 CMD [ "app.handler" ]
